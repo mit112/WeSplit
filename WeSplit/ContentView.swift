@@ -33,6 +33,7 @@ struct ContentView: View {
     }
     
     
+    
     var body: some View {
         NavigationStack {
             Section {
@@ -56,7 +57,10 @@ struct ContentView: View {
                     }
                     Section("Grand Total") {
                         Text(grandTotal, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                            .foregroundStyle(tipSelection == 0 ? .red : .black)
                     }
+                    
+
                     Section("Amount per person") {
                         Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                     }
